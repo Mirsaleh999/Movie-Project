@@ -1,0 +1,103 @@
+﻿@model AboutDto
+@{
+    ViewData["Title"] = "Update";
+}
+
+@section addcss{
+    <style>
+        #title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .create-account-sign {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+        }
+
+        .label-situation {
+            font-size: 5rem;
+            background-color: transparent;
+            border: none;
+            text-align: center;
+            position: relative !important;
+        }
+
+        .input-situation {
+            opacity: 0 !important;
+            background-color: transparent;
+            position: absolute !important;
+            height: 500px !important
+        }
+
+        #plus {
+            position: absolute;
+            margin-top: -130px;
+        }
+
+        .formC label {
+            color: white;
+        }
+
+        .formC input {
+            color: black;
+            background-color: white;
+        }
+
+        .formC textarea {
+            color: black;
+            background-color: white;
+        }
+    </style>
+}
+
+
+<div class="container p-5">
+    <h2 class="text-light">Create Image</h2>
+
+    <form method="post" asp-action="Update" enctype="multipart/form-data">
+        <div class="row">
+            <div style="margin-top:75px; margin-left:190px">
+                <div class="create-account-sign">
+                    <a asp-action="Index"><i class="fa fa-sign-in big-icon"></i></a>
+                </div>
+                <h1 id="title">Update About</h1>
+                <div class="col-md-6 form-group label-situation" style="display: flex; justify-content: center; align-items: center;">
+
+                    <label asp-for="Img" id="plus" class="form-control" for="file" style="font-size:8rem; background-color:transparent; border:none; text-align:center;">
+                        +
+                    </label>
+                    <input asp-for="Img" class="input-situation custom-file-input" type="file" id="createdImage file" name="imageFile" width="500" height="500" style="opacity:0;" />
+                    <img src="~/@Model.Img" id="createdImage" width="500" height="500" style="display:block;" />
+
+                </div>
+
+
+                <div class="col-md-6">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="form-group formC">
+                       
+                        <label asp-for="Position" class="form-control" for="name">Name</label>
+                        <input id="name" required asp-for="Position" class="form-control" />
+                    </div>
+
+                    <div class="form-group formC">
+                        <label for="Description" class="form-control" asp-for="Description">Description</label>
+                        <textarea rows="10" cols="50" required asp-for="Description" class="form-control text-white"> </textarea>
+                    </div>
+
+                    <input type="hidden" asp-for="Img" value="@Model.Img"/>
+                    <button type="submit" value="Create" class="btn btn-custon-four btn-default btn-lg">
+                        Update
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

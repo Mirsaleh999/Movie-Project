@@ -1,0 +1,47 @@
+﻿@model List<ContactDto>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row" style="display:flex; align-items:center; justify-content:center;">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top:75px;">
+        <div class="sparkline8-list">
+            <div class="sparkline8-hd">
+                <div class="main-sparkline8-hd text-white">
+                    <h1 style="color:white; display:flex; align-items:center; justify-content:center;">Contact Message</h1>
+                </div>
+            </div>
+            <div class="sparkline8-graph">
+                <div class="static-table-list">
+                    <table class="table ">
+                        <thead>
+                            <tr style="color:white; font-size:19px;">
+                                <th>Id</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th style="display:flex; text-align:end; justify-content:end;"> Delete </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr style="color:white;">
+                                    <td>#</td>
+                                    <td>@item.FullName</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Message</td>
+                                    <td style="display:flex; text-align:end; justify-content:end;">
+                                        <a class="btn btn-custon-four btn-danger" asp-action="Delete" asp-route-id="@item.Id">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

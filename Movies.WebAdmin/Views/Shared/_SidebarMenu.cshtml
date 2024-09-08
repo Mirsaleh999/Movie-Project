@@ -1,0 +1,106 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject UserManager<AppUser> UserManager
+
+
+<div class="left-sidebar-pro">
+    <nav id="sidebar" class="">
+        <div class="sidebar-header">
+            <a href="index.html"><img class="main-logo" src="~/img/moviec-low-resolution-logo-color-on-transparent-background (2).png"
+                alt="" style="width: 120px; height: 30px; margin-top:30px;" /></a>
+            <strong><img src="~/img/logo/logosn.png" alt="" /></strong>
+        </div>
+        <div class="nalika-profile">
+            <div class="profile-dtl">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    var user = await UserManager.FindByIdAsync(userId);
+                    if (!string.IsNullOrEmpty(user.Img))
+                    {
+                        <a href="#"><img src="~/@user.Img" alt="#" /></a>
+                        <h2><span class="min-dtn">@user.UserName</span></h2>
+                    }
+                    else
+                    {
+                        <a href="#"><img src="~/img/notification/4.jpg" alt="" /></a>
+                        <h2>Lakian <span class="min-dtn">Das</span></h2>
+                    }
+                }
+                else
+                {
+
+                    <a><img src="~/img/log.jpg" alt="#" /></a>
+                    <h2>Lakian <span class="min-dtn">Das</span></h2>
+                }
+            </div>
+            <div class="profile-social-dtl">
+                <ul class="dtl-social">
+                    <li><a href="#"><i class="icon nalika-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon nalika-twitter"></i></a></li>
+                    <li><a href="#"><i class="icon nalika-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="left-custom-menu-adp-wrap comment-scrollbar">
+            <nav class="sidebar-nav left-sidebar-menu-pro">
+                <ul class="metismenu" id="menu1">
+                    <li class="active">
+                        <a class="has-arrow" asp-area="" asp-controller="Movies" asp-action="Index">
+                            <i class="icon nalika-home icon-wrap"></i>
+                            <span class="mini-click-non">Movies</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> </i> <span class="mini-click-non">Category</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Inbox" asp-area="" asp-controller="GenresCategory" asp-action="Index"><span class="mini-sub-pro">Genres</span></a></li>
+                            <li><a title="Inbox" asp-area="" asp-controller="CountryCategory" asp-action="Index"><span class="mini-sub-pro">Country</span></a></li>
+                            <li><a title="Inbox" asp-area="" asp-controller="LanguageCategory" asp-action="Index"><span class="mini-sub-pro">Language</span></a></li>
+                            <li><a title="Inbox" asp-area="" asp-controller="Trands" asp-action="Index"><span class="mini-sub-pro">Trands</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Users Management</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a  asp-area="" asp-controller="UserManagment" asp-action="UserIndex"><span class="mini-sub-pro">User</span></a></li>
+                            <li><a asp-area="" asp-controller="UserManagment" asp-action="RoleIndex"><span class="mini-sub-pro">Role</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" asp-area="" asp-controller="About" asp-action="Index"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">About</span></a>
+                    </li>
+                    <li>
+                        <a class="has-arrow" asp-area="" asp-controller="Contact" asp-action="Index"><i class="icon nalika-bar-chart icon-wrap"></i> <span class="mini-click-non">Contact</span></a>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
+                            <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-forms icon-wrap"></i> <span class="mini-click-non">Forms Elements</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Basic Form Elements" href="basic-form-element.html"><span class="mini-sub-pro">Bc Form Elements</span></a></li>
+                            <li><a title="Advance Form Elements" href="advance-form-element.html"><span class="mini-sub-pro">Ad Form Elements</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-smartphone-call icon-wrap"></i> <span class="mini-click-non">App views</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
+                            <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="removable">
+                        <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model ContactDto
+@inject UserManager<AppUser> UserManager
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<div>
+    <form class="form-contact" method="post" asp-action="Create">
+        <div class="header mb-4">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="mb-3 mt-3">
+            <label asp-for="FullName" for="fullname" class="mb-3" style="color:white;">Full Name</label>
+            <input asp-for="FullName" type="text" class="form-control form-control-contact" id="fullname" placeholder=" Full Name" name="fullname">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" for="email" class="mb-3" style="color:white;">Email</label>
+            <input asp-for="Email" type="email" class="form-control form-control-contact" id="email" placeholder=" Email" name="email">
+        </div>
+        <div class="mb-3 mt-3">
+            <label asp-for="Message" for="Message" class="mb-3" style="color:white;">Message</label>
+            <textarea asp-for="Message" class="form-control form-control-contact" rows="5" id="Message" name="Message" placeholder="Your Message"></textarea>
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(ViewBag.msg))
+        {
+            <input type="submit" value="@ViewBag.msg" class="submit btn button-contact">
+            <input type="submit" value="Göndər" class="submit btn button-contact " style="display:none;">
+        }
+        else
+        {
+            <input type="submit" value="Submit" class="submit btn button-contact">
+        }
+
+    </form>
+</div>
+

@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #202020;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #F0D463;
+    border-radius: 10px;
+}
+
+body {
+
+    background-color: #202020;
+    padding: 0;
+    margin: 0;
+}
+
+#pagenotfound {
+    position: relative;
+    height: 100vh;
+
+}
+
+#pagenotfound .pagenotfound {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.pagenotfound {
+    max-width: 410px;
+    width: 100%;
+    text-align: center;
+}
+
+.pagenotfound .notfound404 {
+    height: 200px;
+    position: relative;
+    z-index: -1;
+}
+
+.pagenotfound .notfound404 h1 {
+    font-size: 260px;
+    margin: 0px;
+    top: -25px;
+    font-weight: 900;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: red;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-position: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.pagenotfound h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    margin-top: 70px;
+}
+
+.pagenotfound p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.pagenotfound a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: red;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 40px;
+    color: white;
+    font-weight: 700;
+    -webkit-box-shadow: 0px 4px 15px -5px red;
+    box-shadow: 0px 4px 15px -5px red;
+}
+
+@media only screen and (max-width:900px) {
+    .pagenotfound .notfound404{
+        height: 142px;
+    }
+    .pagenotfound .notfound404 h1{
+        font-size: 190px;
+    }
+    .pagenotfound p{
+        font-size: 18px;
+    }
+}

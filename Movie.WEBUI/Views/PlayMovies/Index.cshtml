@@ -1,0 +1,97 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section addcss {
+    <link href="~/css/playmovies.css" rel="stylesheet" asp-append-version="true" />
+
+}
+
+<video controls>
+    <source src="~/@Model.MovieC.MovieVideo" type="video/mp4">
+
+</video>
+<div class="container PMovies">
+    <div class="MoviesFoto">
+        <img src="~/@Model.MovieC.Img" alt="foto" class="img-fluid">
+    </div>
+    <div class="text mt-5">
+        <h1>@Model.MovieC.Name</h1>
+        <div class="SpanMovies my-5">
+            <span><i class="bi bi-person-fill"></i>+ @Model.MovieC.Age</span>
+            <span><i class="bi bi-clock"></i>@Model.MovieC.MovieTime</span>
+            <span><i class="bi bi-emoji-smile"></i>@Model.MovieC.Year</span>
+            <span><i class="bi bi-activity"></i>@Model.MovieC.GenresCategoryId</span>
+            <span><i class="bi bi-globe"></i>@Model.MovieC.CountryCategoryId</span>
+            <span><i class="bi bi-globe"></i>@Model.MovieC.ViewsCount</span>
+        </div>
+        <div class="MoviesP">
+            <p>@Model.MovieC.Description</p>
+            <h4 class="my-5">Director:@Model.MovieC.Director</h4>
+        </div>
+        <div class="BMovies">
+            <button type="button" class="btn px-5" data-bs-toggle="modal" data-bs-target="#myModal">
+                <i class="bi bi-share-fill me-2"></i>
+                Share
+            </button>         
+            <button type="button" class="btn px-5" data-bs-toggle="modal" data-bs-target="#trailer">
+                <i class="bi bi-camera-video-fill me-2"></i>
+                Trailer
+            </button>
+
+
+            <!-- The Modal Share-->
+            <div class="modal modalPlayMovies" id="myModal">
+                <div class="modal-dialog">
+                    <div class=" modal-content-playMovies">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title modal-title-playmovies fw-bolder text-white">Share</h4>
+                            <button type="button" class="btn-close btn-play-close" data-bs-dismiss="modal">
+                            </button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body-icon d-flex justify-content-around ">
+                            <a class="my-5"><i class="bi bi-facebook "></i></a>
+                            <a class="my-5"><i class="bi bi-twitter"></i></a>
+                            <a class="my-5"><i class="bi bi-telegram"></i></a>
+                            <a class="my-5"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- The Modal Trailer-->
+            <div class="modal" id="trailer">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-content-playMovies">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title modal-title-playmovies fw-bolder text-white">Trailer</h4>
+                            <button type="button" class="btn-close btn-play-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class=" modal-body-playmovies">
+                            <video controls>
+                                <source src="~/@Model.MovieC.Trailer" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container Suggested">
+    <div>
+        <h2 class="text-white fw-bolder">RELATED MOVIES</h2>
+        <hr id="hr_color">
+            <div class="carousel owl-carousel">
+            @await Component.InvokeAsync("Movie", new { categoryId = Model.MovieC.GenresCategoryId })
+            </div>
+    </div>
+</div>

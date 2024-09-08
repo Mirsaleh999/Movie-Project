@@ -1,0 +1,70 @@
+﻿@model List<RoleViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+@section addcss{
+    <style>
+        #toast-container{
+            margin-top:60px;
+        }
+    </style>
+}
+@section Scripts{
+    @if (TempData["success"] != null)
+    {
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript">
+            toastr.success('@TempData["success"]')
+        </script>
+
+    }
+
+}
+<div class="row" style="display:flex; align-items:center; justify-content:center;">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top:75px;">
+        <div class="sparkline8-list">
+            <div class="sparkline8-hd">
+                <div class="main-sparkline8-hd text-white">
+                    <h1 style="color:white; display:flex; align-items:center; justify-content:center;">Role List</h1>
+                    <div style="float:right">
+                        <a asp-action="RoleCreate" class="btn btn-custon-four btn-primary">Creat Role</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sparkline8-graph">
+                <div class="static-table-list">
+                    <table class="table ">
+                        <thead>
+                            <tr style="color:white; font-size:19px;">
+                                <th>Id</th>
+                                <th>Role</th>
+                                <th style="display:flex; text-align:end; justify-content:end;">Update || Delete </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr style="color:white;">
+                                    <td>#</td>
+                                    <td>@item.Name</td>
+                                    <td style="display:flex; text-align:end; justify-content:end;">
+                                        <a class="btn btn-custon-four" asp-action="RoleUpdate" asp-route-id="@item.Id" style="margin-right:8px; background-color:#2bee75; color:white;">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                            Update
+                                        </a>
+                                        <a class="btn btn-custon-four btn-danger" asp-action="RoleDelete" asp-route-id="@item.Id">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

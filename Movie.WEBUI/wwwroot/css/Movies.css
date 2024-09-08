@@ -1,0 +1,186 @@
+﻿
+
+.Filtir {
+    margin-top: 8rem;
+    margin-left: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.card {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.card {
+    position: relative;
+    width: 280px;
+    height: 450px;
+    border-radius: 0;
+    overflow: hidden;
+    background: linear-gradient(#7b7b7b42, rgba(149, 147, 147, 0));
+}
+
+    .card .poster {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .card .poster::before {
+            content: '';
+            position: absolute;
+            bottom: -180px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, #272829 50%, transparent);
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+    .card:hover .poster::before {
+        bottom: 0px;
+    }
+
+    .card .poster img {
+        width: 100%;
+        height: 300px;
+        transition: 0.5s;
+    }
+
+.bi-play-circle {
+    color: red;
+    font-size: 65px;
+}
+
+.card:hover .poster img {
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+
+.card .details {
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 2;
+    transition: 0.5s;
+    bottom: -45px;
+}
+
+.card:hover .details {
+    bottom: 40px;
+}
+
+.card .details h2 {
+    font-weight: bolder;
+    color: white;
+    max-width: 250px;
+    font-size: 23px;
+}
+
+.card .details h3 {
+    font-size: 0.8em;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.card .details .rating {
+    position: relative;
+    padding: 5px 0;
+}
+
+    .card .details .rating .fa-star {
+        color: #f7f406;
+        font-size: 1em;
+    }
+
+    .card .details .rating span {
+        color: #fff;
+    }
+
+.card .details .tags {
+    position: relative;
+    margin-top: 5px;
+}
+
+    .card .details .tags span {
+        padding: 2px 5px;
+        color: black;
+        background: white;
+        border-radius: 4px;
+        font-weight: bolder;
+    }
+
+        .card .details .tags span:nth-child(2) {
+            background: black;
+            color: white;
+            font-weight: bolder;
+        }
+
+.card .details .info {
+    color: #fff;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Form .input-group {
+            margin-right: 10px;
+        }
+
+        .pro-edt-select {
+            background-color: red;
+            color: white;
+            border-radius: 0;
+            border-color: red;
+        }
+
+            .pro-edt-select:focus {
+                background-color: red;
+                color: white;
+                outline: none;
+            }
+
+            .pro-edt-select option {
+                background-color: red;
+                color: white;
+            }
+
+                .pro-edt-select option:hover {
+                    background-color: white;
+                    color: black;
+                }
+
+
+        .submit{
+            background-color: #202020;
+            color: white;
+            padding: 10px;
+            border-radius:2px;
+            border-color:red;
+        }
+        .moviePageDropdown {
+            display: inline-flex;
+        }
+
+
+
+        .pagination {
+            margin-top:40px; 
+            margin-bottom:-20px;
+        }

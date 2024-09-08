@@ -1,0 +1,102 @@
+﻿@model MovieCDto
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+@section addcss{
+    <style>
+        .single-product-details h2 {
+            color: #707070ed;
+            margin: 10px 0 40px;
+        }
+
+        .single-product-details span {
+            color: white;
+            margin-left: 15px;
+        }
+
+        .create-account-sign {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+        }
+    </style>
+}
+<!-- Single pro tab start-->
+<div class="single-product-tab-area mg-t-0 mg-b-30">
+    <div class="container-fluid">
+        <div class="row" style="margin-top:100px; margin-left:210px;">
+            <div class="create-account-sign">
+                <a asp-action="Index"><i class="fa fa-sign-in big-icon"></i></a>
+            </div>
+            <div class="col-lg-12">
+                <div class="single-product-pr">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div id="myTabContent1" class="tab-content">
+                                <div class="product-tab-list tab-pane fade active in" id="single-tab1">
+                                    <img src="~/@Model.Img" alt="#" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                            <div class="single-product-details res-pro-tb">
+                                <h2> Name:<span>@Model.Name</span> </h2>
+                                <h2> Director:<span>@Model.Director</span></h2>
+                                <h2>Age:<span>@Model.Age +</span></h2>
+                                <h2> Time:<span>@Model.MovieTime</span></h2>
+                                <h2> Year:<span>@Model.Year</span></h2>
+                                <h2>Country:<span>@Model.CName</span></h2>
+                                <h2>Language:<span>@Model.LName</span></h2>
+                                <h2>Genres:<span>@Model.GName</span></h2>
+                                <!-- Button trigger modal -->
+                         
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Single pro tab End-->
+<!-- Single pro tab review Start-->
+<div class="single-pro-review-area mt-t-30 mg-b-30">
+    <div class="container-fluid">
+        <div class="row" style="margin-left:210px;">
+            <div class="col-lg-12">
+                <div class="single-tb-pr">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <ul id="myTab" class="tab-review-design" style="color:#707070ed;">
+                                <li class="active" ><a>description</a></li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                                <div class="product-tab-list product-details-ect tab-pane fade active in"
+                                     id="description">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="review-content-section">
+                                                <p style="color:white">@Model.Description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+
+
+</script>
+
+

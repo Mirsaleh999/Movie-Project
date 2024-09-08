@@ -1,0 +1,33 @@
+﻿@model HomeViewModel
+
+
+
+<div class="modal-overlay-sigup">
+    <div class="modal-content-sigup">
+        <span class="close-button-sigup">&times;</span>
+        <h2 class="modal-title-sigup">Sign Up</h2>
+        <form class="formModal" asp-controller="account" asp-action="SignUp" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <label asp-for="SignUpViewModel.UserName" class="labelModal-signup">Username</label>
+            <input asp-for="SignUpViewModel.UserName" type="text" required data-val-required="Username cannot be empty.">
+
+            <label asp-for="SignUpViewModel.Email" class="labelModal-signup">Email</label>
+            <input asp-for="SignUpViewModel.Email" type="text" required data-val-required="Email cannot be empty.">
+
+            <label asp-for="SignUpViewModel.Password" class="labelModal-signup">Password</label>
+            <input asp-for="SignUpViewModel.Password" type="password" required data-val-required="password cannot be empty.">
+            <span asp-validation-for="SignUpViewModel.Password" class="text-danger"></span>
+
+            <label asp-for="SignUpViewModel.PasswordConfirm" class="changePassword-signup">Confirm Password</label>
+            <input asp-for="SignUpViewModel.PasswordConfirm" type="password" required data-val-required="password confirm cannot be empty.">
+            <span asp-validation-for="SignUpViewModel.Password" class="text-danger"></span>
+
+
+            <div class="form-group">
+                <input type="checkbox" name="remember-me">
+                <label for="remember-me" class="remember-me mx-2">Remember me</label>
+            </div>
+            <button type="submit" class="btn-signup">Sign In</button>
+        </form>
+    </div>
+</div>

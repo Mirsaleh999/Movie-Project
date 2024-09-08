@@ -1,0 +1,259 @@
+﻿@model MovieCDto
+@{
+    ViewData["Title"] = "Edit";
+}
+@section addcss{
+    <style>
+        .create-account-sign {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+        }
+
+        .label-situation {
+            font-size: 5rem;
+            background-color: transparent;
+            border: none;
+            text-align: center;
+            position: relative !important;
+        }
+
+        .input-situation {
+            opacity: 0 !important;
+            background-color: transparent;
+            position: absolute !important;
+            height: 300px !important
+        }
+
+        #plus {
+            position: absolute;
+            margin-top: -130px;
+        }
+    </style>
+}
+<div class="single-product-tab-area mg-b-30">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="create-account-sign">
+                        <a asp-action="Index" style="margin-top:50px; margin-bottom:-90px"><i class="fa fa-sign-in big-icon"></i></a>
+                    </div>
+                    <form class="review-tab-pro-inner" enctype="multipart/form-data" method="post" asp-action="Edit" style="margin-top:120px; margin-left:220px;">
+
+                        <ul id="myTab3" class="tab-review-design">
+                            <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> Movie Update</a></li>
+                            <li><a href="#reviews"><i class="icon nalika-picture" aria-hidden="true"></i> Image|Video</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content custom-product-edit">
+                            <div class="product-tab-list tab-pane fade active in" id="description">
+                                <div class="row">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                                        <div class="review-content-section">
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                                                <input asp-for="Name" type="text" class="form-control" placeholder=" Name">
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <input asp-for="Age"  type="text" class="form-control" placeholder="Age">
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span  class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <input asp-for="MovieTime"  type="text" class="form-control" placeholder="Movie Time">
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <input asp-for="Year"  type="text" class="form-control" placeholder="Year">
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
+                                                <input asp-for="Director" type="text" class="form-control" placeholder="Director">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                        <div class="review-content-section">
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <textarea asp-for="Description" type="text" class="form-control" placeholder="Description"></textarea>
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <select asp-for="GenresCategoryId" asp-items="@(new SelectList(Model.GenresCategoryDtos, nameof(GenresCategoryDto.Id), nameof(GenresCategoryDto.Name)))"
+                                                class="form-control pro-edt-select form-control-primary">
+                                                    <option disabled selected value="Genres">Genres Category</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <select asp-for="LanguageCategoryId" asp-items="@(new SelectList(Model.LanguageCategoryDtos, nameof(LanguageCategoryDto.Id), nameof(LanguageCategoryDto.Name)))"
+                                                class="form-control pro-edt-select form-control-primary">
+                                                    <option disabled selected value="Language">Language Category</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <select asp-for="CountryCategoryId" asp-items="@(new SelectList(Model.CountryCategoryDtos, nameof(CountryCategoryDto.Id), nameof(CountryCategoryDto.Name)))"
+                                                class="form-control pro-edt-select form-control-primary">
+                                                    <option disabled selected value="Country">Country Category</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <select asp-for="TrandsId" asp-items="@(new SelectList(Model.TrandCategoryDtos, nameof(TrandCategoryDto.Id), nameof(TrandCategoryDto.Name)))"
+                                                class="form-control pro-edt-select form-control-primary">
+                                                    <option disabled selected value="Trands">Trands</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-check ms-4">
+                                                <input asp-for="Top" class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" checked>
+                                                <label asp-for="Top" class="form-check-label" style="color:white;">Top 5 </label>
+                                            </div>
+                                            <div class="form-check ms-4">
+                                                <input asp-for="isneww" class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" checked>
+                                                <label asp-for="isneww" class="form-check-label" style="color:white;">New </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="text-center custom-pro-edt-ds">
+                                            <button type="submit" value="Create" class="btn btn-ctl-bt waves-effect waves-light m-r-10">
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-tab-list tab-pane fade" id="reviews">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="review-content-section">
+                                            <div class="row">
+                                                <div asp-validation-summary="All" class="text-danger"></div>
+                                                <div class="col-md-12 form-group label-situation" style="display: flex; justify-content: center; align-items: center;">
+
+                                                    <label asp-for="Img" id="plus" class="form-control" for="file" style="font-size:4rem; background-color:transparent; border:none; text-align:center;">
+                                                        Img
+                                                    </label>
+                                                    
+                                                    <input asp-for="Img" name="imageFile" class="input-situation custom-file-input" type="file"
+                                                    id="createdImage file" width="500" height="500" style="opacity:0;" />
+                                                    <img src="~/@Model.Img" id="createdImage" width="500" height="500" style="display:block;" />
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-12 form-group label-situation" style="display: flex; justify-content: center; align-items: center;">
+                                                    <input asp-for="MovieVideo" name="videoFile" class="input-situation video" type="file" id="createdVideo File" width="500" height="500" style="opacity:0;" />
+                                                    <video id="createdVideo" width="800" height="500" controls>
+                                                        <source src="~/@Model.MovieVideo" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-group label-situation" style="display: flex; justify-content: center; align-items: center;">
+                                                    <input asp-for="Trailer" name="trailerFile" class="input-situation Trailer" type="file" id="createdTrailer file" width="500" height="500" style="opacity:0;" />
+                                                    <video id="createdTrailer" width="800" height="500" controls>
+                                                        <source src="~/@Model.Trailer" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+
+        //Image
+        $('.custom-file-input').on('change', function () {
+            var fileName = $(this).val();
+            console.log(fileName);
+            readURLImage(this);
+
+        });
+
+        function readURLImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    console.log(e.target.result);
+                    $('#plus').text("");
+                    $('#createdImage').css("display", "block");
+
+                    $('#createdImage').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+        //Video
+
+
+
+        $('.video').on('change', function () {
+            var fileVideo = $(this).val();
+            console.log(fileVideo);
+            readURLVideo(this);
+
+        });
+
+        function readURLVideo(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    console.log(e.target.result);
+                    $('#plusVideo').text("");
+                    $('#createdVideo').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        //Trailer
+        $('.Trailer').on('change', function () {
+            var fileTrailer = $(this).val();
+            console.log(fileTrailer);
+            readURLTrailer(this);
+        });
+
+        function readURLTrailer(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    console.log(e.target.result);
+                    $('#plusTrailer').text(""); // If you want to remove the label text
+                    $('#createdTrailer').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+}

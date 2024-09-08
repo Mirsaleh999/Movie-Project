@@ -1,0 +1,195 @@
+﻿@inject UserManager<AppUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @{
+        await Html.RenderPartialAsync("ValidationAddcssPartial");
+    }
+    
+
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/contactus.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/owl-carusel.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Responsive.css" asp-append-version="true" />
+    <link rel="icon" href="~/Img/Minimalist White Black Cinematography Business Logo.gif" type="img" asp-append-version="true">
+    <title> Moviespipe</title>
+
+    @RenderSection("addcss", false)
+</head>
+<body>
+
+
+    <!-- Partial _Sidebar -->
+    <header>
+        <div class="logoicons">
+            <a asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/Img/moviec-low-resolution-logo-color-on-transparent-background (2).png" alt="logo">
+            </a>
+        </div>
+        <div class="dropdown">
+            @if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var user = await UserManager.FindByIdAsync(userId);
+                if (!string.IsNullOrEmpty(user.Img))
+                {
+                    <img src="/@user.Img" alt="#" class="dropbtn" style="width: 25px; height: 25px; object-fit: cover; border-radius: 50%;" onclick="myFunction()" />
+                }
+                else
+                {
+                    <button class="dropbtn bi bi-person-fill px-1" onclick="myFunction()"></button>
+                }
+            }
+            else
+            {
+                <button class="dropbtn bi bi-person-fill px-1" onclick="myFunction()"></button>
+            }
+
+            <div id="myDropdown" class="dropdown-content">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a>
+                    <a asp-area="" asp-controller="Account" asp-action="ProfileSettings" asp-route-id="@User.FindFirstValue(ClaimTypes.NameIdentifier)">Profile Settings</a>
+
+                }
+                else
+                {
+                    <a id="open-modal" class="btn-open-modal"> Sign In</a>
+                    <a id="open-modal-signup" class="btn-open-modal">Sign Up</a>
+                }
+            </div>
+            <!-- Modal Sign In -->
+            @await Component.InvokeAsync("Signin")
+
+            <!-- Modal Sign Up -->
+            @await Component.InvokeAsync("Signup")
+        </div>
+        <div class="search-box">
+            <input class="search-txt" style="font-size: 15px!important;" placeholder="Search"><i class="bi bi-search "></i>
+        </div>
+        <div class="Accaunt">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+
+        </div>
+
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="active">HOME</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Movies" asp-action="Index">MOVIES</a>
+                </li>
+                <li>
+                    <a asp-controller="Contact" asp-action="Create">Contact</a>
+                </li>
+                <li>
+                    <a asp-controller="Accaunt" asp-action="ProfileSettings">SERIAL</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="loader"></div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <!-- Partial _Footer -->
+    <footer>
+        <div class="DisplayType">
+            <h4>DISPLAY TYPE</h4>
+            <ul>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Comedy</a></li>
+                <li><a href="#">Drama</a></li>
+                <li><a href="#">Horror</a></li>
+            </ul>
+        </div>
+        <div class="Icon">
+            <ul class="">
+                <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+            </ul>
+        </div>
+        <a class="logoIcon" asp-controller="Home" asp-action="Index">
+            <img src="~/Img/moviec-low-resolution-logo-color-on-transparent-background (2).png" alt="logo">
+        </a>
+    </footer>
+
+    <button onclick="topFunction()" id="topmyBtn" title="Go to top"><i class="bi bi-arrow-up px-1"></i></button>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+
+    <script>
+        //Loader pageden page kecid etmek
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+
+            loader.classList.add("loader-hidden");
+
+            loader.addEventListener("transitionend", () => {
+                loader.parentNode.removeChild(loader);
+            });
+        });
+
+
+
+        let mybutton = document.getElementById("topmyBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        //Img create
+        $('.custom-file-input').on('change', function () {
+            var fileName = $(this).val();
+            console.log(fileName);
+            readURL(this);
+
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    console.log(e.target.result);
+                    $('#plus').text("");
+                    $('#createdImage').css("display", "block");
+
+                    $('#createdImage').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <script src="~/js/Index.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

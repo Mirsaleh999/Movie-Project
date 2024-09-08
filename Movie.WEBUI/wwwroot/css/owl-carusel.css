@@ -1,0 +1,434 @@
+.slider-item {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+}
+
+.slider-item::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.slider-content-main {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    height: 100vh;
+    padding: 0 100px;
+}
+
+.slider-content {
+    text-align: left;
+}
+.slider-content .badge{
+    background-color: #f8bc24;
+    color: black;
+    font-size: 20px;
+
+}
+.slider-content h1 {
+    font-size: 40px;
+    color: red;
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.slider-content p {
+    color: white;
+    font-size: 17px;
+    width: 98%;
+    margin: 0;
+    line-height: 23px;
+    margin-bottom: 3rem;
+}
+
+.slider-action {
+    margin-top: 50px;
+}
+
+.slider-action a {
+    padding: 15px 40px;
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all ease-in-out 300ms;
+}
+
+.slider-action .slider-btn-1 {
+    background-color: red;
+    border: 2px solid red;
+    margin-right: 30px;
+}
+
+.slider-action .slider-btn-1:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.slider-action .slider-btn-2 {
+    background-color: red;
+    border: 2px solid red;
+}
+
+.slider-action .slider-btn-2:hover {
+    background-color: transparent;
+    color: red;
+}
+
+.SpanMovies span {
+    font-size: 14px;
+    margin-right: 1rem;
+    color: white;
+}
+
+.SpanMovies span i {
+    margin-right: 1rem;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.SpanMovies span {
+    font-size: 16px;
+}
+
+/* TODO: owl-carusel */
+.hero-slider .owl-prev,
+.owl-next {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    top: 50%;
+    border-radius: 50px !important;
+    background-color: red !important;
+    transform: translateY(-50%);
+    transition: all 400ms ease-in-out;
+}
+
+.owl-nav span {
+    font-size: 30px;
+}
+
+.hero-slider .owl-prev {
+    left: 0;
+    opacity: 0;
+}
+
+.hero-slider:hover .owl-prev {
+    left: 20;
+    opacity: 1;
+}
+
+.hero-slider:hover .owl-next {
+    right: 20;
+    opacity: 1;
+}
+
+.hero-slider .owl-next {
+    right: 0;
+    opacity: 0;
+}
+
+.hero-slider .owl-dots {
+    position: absolute;
+    width: 100%;
+    top: auto;
+    bottom: 30px;
+    color: red;
+}
+
+/* TODO Animate css */
+.hero-slider .owl-item.active .slider-content .badge {
+    animation: fadeInDown;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+.hero-slider .owl-item.active .slider-content h1 {
+    animation: fadeInDown;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+.hero-slider .owl-item.active .slider-content p {
+    animation: fadeInUp;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+.hero-slider .owl-item.active .slider-content .SpanMovies span {
+    animation: fadeInDown;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+.hero-slider .owl-item.active .slider-action {
+    animation: fadeInUp;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+.images,
+.images .featured,
+.images .movies,
+.images .shows {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-div>div {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    cursor:auto;
+    margin: 3%;
+}
+
+.icon-container {
+    width: 40px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -130px;
+    right: 0;
+    background-color: red;
+    font-size: 25px;
+    visibility: visible;
+    transition: all 0.5s ease-in !important;
+}
+
+.img-div>.active:hover .icon-container {
+    top: 0px;
+    visibility: visible;
+    transition: all 0.5s ease-in !important;
+}
+.bi-play-circle,.bi-plus-circle-dotted,.bi-info-circle{
+    color: white;
+
+}
+.img-div>p {
+    display: inline-block;
+    cursor:auto;
+}
+
+.img-div>p,
+h4 {
+    cursor: auto;
+}
+
+.featured>img,
+.image>.img-div {
+    width: 220px;
+    height: 280px;
+}
+
+#image {
+    width: 220px;
+    height: 300px;
+}
+
+.images>div {
+    display: none !important;
+}
+
+.images>.active {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.featured,
+.movies,
+.shows:hover {
+    cursor: pointer;
+}
+
+.featured-movies-shows {
+    text-decoration: none;
+    display: flex;
+    color: white;
+    font-size: 29px;
+
+}
+
+
+
+.movies_li:hover {
+    color: red;
+}
+
+.shows_li:hover {
+    color: red;
+}
+
+.wrapper {
+    width: 100%;
+    margin-top: 10rem;
+}
+
+.card {
+    width: 220px;
+    height: 300px;
+}
+
+
+#hr_color {
+    width: 60px;
+    color: red;
+    margin-left: 2rem;
+}
+
+.wrapper h2 {
+    color: white;
+    font-weight: bolder;
+}
+
+.top10 {
+    margin-top: 14rem;
+}
+
+.swiper-slide>img {
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide>p {
+    display: inline-block;
+}
+
+.TrendingNow {
+    margin-top: 14rem;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.BestSeries {
+    width: 100%;
+    height: 600px;
+    margin-top: 14rem;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.771), rgb(0, 0, 0)), url(/Img/35-Best-Movies-Like-Inception-You-Should-Watch-in-2022-750x445.jpg);
+    background-size: cover;
+}
+
+.BestSeries h3,
+h1 {
+    cursor: auto;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    transform: translate(0, 6rem);
+    font-size: 40px;
+}
+
+.BestSeries h1 {
+    font-size: 70px;
+}
+
+.BestSeries li {
+    text-align: center;
+}
+
+.BestSeries_li {
+    text-decoration: none;
+    display: flex;
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.Suggested {
+    margin-top: 19rem;
+}
+
+
+.card-language {
+    position: relative;
+    /* other styles */
+}
+
+.turkish-text-container {
+    position: absolute;
+    top: 0px;
+    right: 170px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.turkish-text {
+    color: red;
+}
+
+
+@media(max-width:920px) {
+    .slider-content h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .slider-content-main {
+        padding: 0 20px;
+    }
+
+    .slider-content p {
+        font-size: 14px;
+        width: 100%;
+        margin: 0 auto;
+        line-height: 18px;
+    }
+
+    .slider-action a {
+        padding: 13px 20px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .slider-action .slider-btn-1 {
+        margin-right: 20px;
+    }
+}

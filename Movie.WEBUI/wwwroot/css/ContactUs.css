@@ -1,0 +1,43 @@
+﻿
+.form-contact .header h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bolder;
+    color: red;
+    transform: translate(10px, -26px);
+}
+
+
+.form-control-contact {
+    border-color: white;
+    background-color: #1D1C1C;
+    padding: 8px;
+    border-radius: 0;
+    color: grey;
+}
+
+    .form-control-contact:focus {
+        background-color: white;
+        color: black;
+        box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.36);
+        border-color: red;
+    }
+
+ .button-contact {
+    padding: 8px 40px;
+    background-color: red;
+    border-radius: 0;
+    color: white;
+}
+
+    .button-contact:hover {
+        background-color: red;
+        color: white;
+    }
+
+.form-contact {
+    width: 500px;
+    margin: 170px auto;
+}

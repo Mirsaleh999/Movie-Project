@@ -1,0 +1,607 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #202020;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #F0D463;
+    border-radius: 10px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background: #272829;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.logoicons img {
+    width: 120px;
+    height: 30px;
+}
+
+body {
+    background-color: #202020;
+}
+
+main {
+    margin-bottom: 12rem;
+}
+
+footer {
+    background: #272829;
+    width: 100%;
+    display: flex;
+}
+
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+    transition: 1s, visibility 1s;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 95px;
+    height: 95px;
+    border: 15px solid #dddd;
+    border-top-color: red;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+.dropbtn {
+    font-size: 16px;
+    cursor: pointer;
+    color: red;
+    transform: scale(2);
+    background: white;
+    border-radius: 100%;
+    border-color: red;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 55px;
+    background: rgba(255, 255, 255, 0.257);
+    min-width: 190px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: rgb(175, 175, 175);
+        padding: 6px 4px 4px;
+        text-decoration: none;
+        display: block;
+        font-weight: bold;
+        backdrop-filter: blur(1px);
+    }
+
+.dropdown a:hover {
+    background: red;
+    color: white;
+    transition: 0.5s;
+}
+
+.search-box {
+    position: relative;
+    top: 0;
+    background: white;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.bi-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: red;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    transition: 0.5s;
+    width: 300px;
+}
+
+.show {
+    display: block;
+}
+
+.Accaunt {
+    display: none;
+}
+
+.nav-bar ul {
+    display: flex;
+}
+
+    .nav-bar ul li a {
+        display: block;
+        color: white;
+        font-size: 16px;
+        padding: 10px 25px;
+        border-radius: 50px;
+        transition: 0.2s;
+        margin: 0 5px;
+        text-decoration: none;
+        font-weight: bolder;
+    }
+
+.dropdown-menu {
+    background-color: #272829;
+}
+
+.nav-bar ul li a:hover {
+    color: red;
+    background: white;
+}
+
+.nav-bar ul li a .active {
+    color: #1b1010;
+    background: white;
+}
+
+.nav-item a.active {
+    color: white;
+}
+
+#moviesCarusel {
+    width: 100%;
+    height: 80vh;
+}
+
+.movie-category {
+    top: 0;
+    margin-top: 9rem;
+}
+
+/*  */
+
+.DisplayType{
+    width:33%;
+
+}
+.DisplayType h4 {
+    margin-top: 13px;
+    color: #F0D463;
+    font-weight: bolder;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+}
+
+.DisplayType ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.DisplayType ul {
+    list-style-type: none;
+    padding: 0;
+    display:flex;
+    justify-content:center;
+}
+
+    .DisplayType ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+
+        .DisplayType ul li:last-child {
+            margin-right: 0; 
+        }
+
+.DisplayType a:hover {
+    color: #F0D463;
+}
+
+.Icon {
+    display:flex;
+    justify-content:center;
+    width:33%;
+}
+
+    .Icon li {
+        display: inline-block;
+        font-size: 30px;
+        margin-top: 13px;
+        margin-right: 2rem;
+
+    }
+
+.bi-twitter,
+.bi-facebook,
+.bi-linkedin,
+.bi-instagram {
+    color: #F0D463;
+}
+
+    .bi-twitter:hover,
+    .bi-facebook:hover,
+    .bi-linkedin:hover,
+    .bi-instagram:hover {
+        color: #F0D463;
+    }
+
+.logoIcon {
+    margin-top:10px;
+    width:33%;
+    display:flex;
+    justify-content:end;
+    margin-right:73px;
+}
+
+.logoIcon img{
+   width:181px;
+   height:53px;
+   margin-right: 38px;
+}
+
+/* Modal Sign In */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a8;
+}
+
+.modal-content {
+    background-color: #202020;
+    margin: 6% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    height: 600px;
+}
+
+.modal-title {
+    text-align: center;
+    color: #F0D463;
+    font-weight: bolder;
+}
+
+.close-button {
+    color: #F0D463;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close-button:hover,
+    .close-button:focus {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.formModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labelModal {
+    color: white;
+    margin: 1rem 0;
+    margin-left: -13rem;
+}
+
+.remember-me {
+    color: white;
+}
+
+.formModal input[type="text"],
+.formModal input[type="password"] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+    .formModal input[type="text"]:hover,
+    .formModal input[type="password"]:hover {
+        background-color: #f2f2f2;
+    }
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+    .form-group .forgot-password {
+        color: red;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+        .form-group .forgot-password:hover {
+            color: red;
+            background-color: #272829;
+        }
+
+.btn-signin {
+    width: 80%;
+    background-color: red;
+    transition: background-color 1s;
+    font-weight: bolder;
+    color: white;
+    padding: 14px 20px;
+    font-size: 18px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn-signin:hover {
+        background-color: #F0D463;
+        color: black;
+    }
+
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+    .social-icons a {
+        color: #fff;
+        font-size: 32px;
+        transition: 0.3s;
+        background-color: #202020;
+    }
+
+
+
+.modal-content p {
+    color: white;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+p .sign-up {
+    color: red;
+    text-decoration: none;
+}
+
+    p .sign-up:hover {
+        color: red;
+        background-color: #202020;
+    }
+
+/* Modal Sign Up */
+
+.modal-overlay-sigup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-color: #000000a8;
+}
+
+.modal-content-sigup {
+    background-color: #202020;
+    margin: 6% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    height: 670px;
+}
+
+.modal-title-sigup {
+    text-align: center;
+    color: #F0D463;
+    font-weight: bolder;
+}
+
+.close-button-sigup {
+    color: #F0D463;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close-button-sigup:hover,
+    .close-button-sigup:focus {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.formModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labelModal-signup {
+    color: white;
+    margin: 5px;
+    margin-left: -13rem;
+}
+
+.changePassword-signup {
+    color: white;
+    margin: 5px;
+    margin-left: -9rem;
+}
+
+.remember-me {
+    color: white;
+}
+
+.formModal input[type="text"],
+.formModal input[type="password"] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+    .formModal input[type="text"]:hover,
+    .formModal input[type="password"]:hover {
+        background-color: #f2f2f2;
+    }
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+.btn-signup {
+    width: 80%;
+    background-color: red;
+    transition: background-color 1s;
+    font-weight: bolder;
+    color: white;
+    padding: 14px 20px;
+    font-size: 18px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn-signup:hover {
+        background-color: #F0D463;
+        color: black;
+    }
+
+.modal-content-sigup p {
+    color: white;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+
+
+.featured-movies-shows li {
+    background-color: #202020;
+    transition: background-color 1s ease;
+}
+
+    .featured-movies-shows li:first-child {
+        background-color: red;
+    }
+
+    .featured-movies-shows li.selected {
+        background-color: red;
+    }
+
+.BestSeries_li li {
+    transition: background-color 1s ease;
+}
+
+    .BestSeries_li li:first-child {
+        background-color: red;
+    }
+
+    .BestSeries_li li.selected {
+        background-color: red;
+    }
+
+
+#topmyBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100%;
+}
+
+    #topmyBtn:hover {
+        background-color: #555;
+    }
+
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .pagination > li {
+        margin: 1%;
+    }
+
+        .pagination > li > a,
+        .pagination > li > a.disabled,
+        .pagination > li > a.active {
+            color: white !important;
+            text-decoration: none !important;
+        }
+

@@ -1,0 +1,38 @@
+﻿@model HomeViewModel 
+@{
+    ViewData["Title"] = "Index";
+}
+@section addcss{
+    <link rel="stylesheet" href="~/css/about.css">
+    <style>
+        .AContentH1 {
+            display: initial;
+        }
+
+        #about {
+            background: #202020;
+            margin-bottom: -12rem;
+        }
+
+        .about-text p{
+            text-align:justify;
+        }
+
+    </style>
+}
+@foreach (var item in Model.Abouts)
+{
+
+    <section id="about">
+        <div class="about-content mt-5">
+            <img src="~/@item.Img" alt="#" style="margin-top: 40px;">
+            <div class="about-text">
+                <h1 class="AContentH1">About <span>Me</span></h1>
+                <h5>@item.Position</h5>
+                <p> @item.Description</p>
+                <button class="button_detailed">Detailed</button>
+            </div>
+        </div>
+    </section>
+}
+

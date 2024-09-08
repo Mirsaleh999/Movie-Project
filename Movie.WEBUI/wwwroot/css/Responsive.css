@@ -1,0 +1,1802 @@
+﻿
+
+/* Mobil telefonlar üçün */
+
+
+@media (max-width: 425px) and (min-width: 376px) {
+
+    main {
+        margin-top: 5%;
+    }
+
+    .Accaunt {
+        display: block;
+        cursor: pointer;
+        transform: translate(11px, 0px);
+    }
+
+        .Accaunt .line {
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 6px 0;
+        }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 60.1px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #272829;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .dropdown {
+        transform: translate(-53px, 0);
+    }
+
+
+    .dropdown-menu {
+        top: 45px;
+        background-color: rgb(197, 95, 95);
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+
+    .nav-bar.active {
+        height: 270px;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 206px;
+        transform: translate(-18px, 0);
+    }
+
+    .logoicons img {
+        display: none;
+    }
+
+    .nav-bar ul li a {
+        transform: translate(0, -64px);
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .DisplayType {
+        display: none;
+    }
+
+    .logoIcon {
+        width: 30%;
+    }
+
+        .logoIcon img {
+            width: 146px;
+            transform: translate(89px, 5px);
+            height: 40px;
+        }
+
+    .Icon {
+        width: 70%;
+    }
+
+        .Icon li {
+            font-size: 21px;
+            margin-top: 13px;
+            margin-right: 1rem;
+        }
+
+    /* Header ve Footer hisse sonu */
+
+    .form-contact .header h1 {
+        font-size: 31px;
+    }
+
+    .form-contact {
+        width: 91%;
+        height: auto;
+        margin: 98px auto;
+    }
+
+
+    /* Contact hisse sonu */
+
+
+    .Filtir {
+        transform: translate(-104px, -7px);
+    }
+
+    .input-group > .form-control, .input-group > .form-floating, .input-group > .form-select {
+        padding: 2px;
+        font-size: 15px;
+    }
+
+    .card-container {
+        justify-content: center !important;
+        margin-bottom: 0;
+    }
+
+    .moviePageDropdown {
+        transform: translate(96px, 0) !important;
+    }
+
+    .pagination {
+        margin-top: 0 !important;
+        transform: translate(0, 56px);
+    }
+
+        .pagination > li > a {
+            font-size: 22px;
+            padding: 3px;
+        }
+
+    /*  Movies hisse sonu */
+
+    video {
+        height: 465px !important;
+    }
+
+    .MoviesFoto {
+        margin-top: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+        .MoviesFoto img {
+            width: 320px !important;
+            height: 490px !important;
+            transform: translate(24px, 10px);
+        }
+
+    .text {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 0 0;
+        transform: translate(-45px, 0) !important;
+    }
+
+    .PMovies div h1 {
+        transform: translate(-29px,10px) !important;
+        font-size: 29px;
+    }
+
+    .SpanMovies {
+        margin: 11px 0 !important;
+        width: 400px;
+    }
+
+        .SpanMovies span {
+            margin-right: 0 !important;
+            padding: 4px !important;
+        }
+
+            .SpanMovies span i {
+                margin-right: 3px !important;
+                font-size: 19px !important;
+            }
+
+    .MoviesP p {
+        width: 350px !important;
+    }
+
+    .MoviesP h4 {
+        margin: 21px 0 !important;
+    }
+
+    .PMovies {
+        transform: translate(0,0) !important;
+        width: 100%;
+        display: block !important;
+    }
+
+    .BMovies {
+        width: 100%;
+        display: block !important;
+        transform: translate(37px, 0) !important;
+    }
+
+        .BMovies button {
+            width: 91% !important;
+            margin: 16px 0 !important;
+            transform: translate(-36px, 0) !important;
+        }
+
+    .slider-content .badge {
+        font-size: 23px;
+    }
+
+    .slider-content > h1 {
+        font-size: 28px;
+    }
+
+    .slider-content > p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .slider-action {
+        display: flex;
+        justify-content: center;
+    }
+
+        .slider-action .slider-btn-1 {
+            font-size: 18px;
+            padding: 7px 77px;
+        }
+
+    .SpanMovies {
+        display: none;
+    }
+
+        .SpanMovies span {
+            font-size: 11px;
+        }
+
+            .SpanMovies span i {
+                font-size: 14px !important;
+            }
+
+    .images,
+    .images .featured,
+    .images .movies,
+    .images .shows {
+        display: flex !important;
+        width: 105% !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .image {
+        width: 100% !important;
+    }
+
+        .featured > img,
+        .image > .img-div {
+            width: 220px !important;
+            height: 280px !important;
+            padding: 0 10px 0 0 !important;
+        }
+
+    #image {
+        width: 180px !important;
+        height: 291px !important;
+    }
+
+    #moviesCarusel {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-div > h4 {
+        font-size: 15px !important;
+        transform: translate(6px, -11px);
+    }
+
+    .img-div > p {
+        font-size: 10px !important;
+        transform: translate(6px, -17px);
+    }
+
+    .BestSeries_li {
+        font-size: 16px;
+    }
+
+    .featured-movies-shows {
+        font-size: 19px;
+        margin-left: -12px;
+    }
+
+    .wrapper, .Suggested, .TrendingNow, .BestSeries {
+        width: 100%;
+        margin-top: 3rem;
+        height: auto;
+    }
+
+
+
+
+    .modal-content {
+        transform: translate(-20px, 125px);
+        width: 334px;
+        height: 542px;
+    }
+
+    .labelModal {
+        margin: 0rem 0 0 -10rem;
+    }
+
+    .form-group {
+        font-size: 13px;
+        margin: 7px 0;
+    }
+
+    .modal-content p {
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    .social-icons {
+        justify-content: space-around;
+    }
+
+        .social-icons a:hover {
+            background-color: #202020;
+        }
+
+
+    .modal-overlay-sigup {
+        transform: translate(-29px, 49px);
+    }
+
+    .modal-content-sigup {
+        margin: 0 0;
+        padding: 8px;
+        width: 349px;
+        height: 573px;
+    }
+
+    .modal-title-sigup {
+        margin: 0 0;
+    }
+
+    .labelModal-signup {
+        margin-left: -12rem;
+        font-size: 13px;
+    }
+
+    .changePassword-signup {
+        color: white;
+        margin: 5px 5px 5px -9rem;
+        font-size: 11px;
+    }
+
+    .remember-me {
+        font-size: 16px;
+    }
+
+    .formModal {
+        font-size: 9px;
+    }
+
+    /* Play Movies Home page hisse sonu */
+}
+
+@media (max-width: 375px) and (min-width: 319px) {
+    main {
+        margin-top: 5%;
+    }
+
+    .Accaunt {
+        display: block;
+        cursor: pointer;
+        transform: translate(-12px, 0px);
+    }
+
+        .Accaunt .line {
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 6px 0;
+        }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 60.1px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #272829;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .dropdown {
+        transform: translate(-53px, 0);
+    }
+
+
+    .dropdown-menu {
+        top: 45px;
+        background-color: rgb(197, 95, 95);
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+
+    .nav-bar.active {
+        height: 270px;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 206px;
+        transform: translate(-28px, 0);
+    }
+
+    .logoicons img {
+        display: none;
+    }
+
+    .nav-bar ul li a {
+        transform: translate(0, -64px);
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .DisplayType {
+        display: none;
+    }
+
+    .logoIcon {
+        width: 30%;
+    }
+
+        .logoIcon img {
+            width: 146px;
+            transform: translate(80px, 5px);
+            height: 31px;
+        }
+
+    .Icon {
+        width: 70%;
+    }
+
+        .Icon li {
+            font-size: 16px;
+            margin-top: 13px;
+            margin-right: 1rem;
+        }
+
+    /* Header ve Footer hisse sonu */
+
+    .form-contact .header h1 {
+        font-size: 31px;
+    }
+
+    .form-contact {
+        width: 91%;
+        height: auto;
+        margin: 98px auto;
+    }
+
+    .button-contact {
+        padding: 8px 40px;
+        background-color: red;
+        border-radius: 0;
+        color: white;
+    }
+
+        .button-contact:hover {
+            background-color: red;
+            color: white;
+        }
+    /* Contact hisse sonu */
+
+    .Filtir {
+        transform: translate(-104px, -7px);
+    }
+
+    .input-group > .form-control, .input-group > .form-floating, .input-group > .form-select {
+        padding: 2px;
+        font-size: 15px;
+    }
+
+    .card-container {
+        justify-content: center !important;
+        margin-bottom: 0;
+    }
+
+    .moviePageDropdown {
+        transform: translate(96px, 0) !important;
+    }
+
+    .pagination {
+        margin-top: 0 !important;
+        transform: translate(0, 56px);
+    }
+
+        .pagination > li > a {
+            font-size: 22px;
+            padding: 3px;
+        }
+
+    /*  Movies hisse sonu */
+
+    video {
+        height: 465px !important;
+    }
+
+    .MoviesFoto {
+        margin-top: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+        .MoviesFoto img {
+            width: 304px !important;
+            height: 490px !important;
+            transform: translate(19px, 10px);
+        }
+
+    .text {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 0 0;
+        transform: translate(-45px, 0) !important;
+    }
+
+    .PMovies div h1 {
+        transform: translate(-18px,10px) !important;
+        font-size: 29px;
+    }
+
+    .SpanMovies {
+        margin: 11px 0 !important;
+        width: 400px;
+    }
+
+        .SpanMovies span {
+            margin-right: 0 !important;
+            padding: 4px !important;
+            font-size: 15px !important;
+        }
+
+            .SpanMovies span i {
+                margin-right: 3px !important;
+                font-size: 13px !important;
+            }
+
+    .MoviesP p {
+        width: 319px !important;
+    }
+
+    .MoviesP h4 {
+        margin: 21px 0 !important;
+    }
+
+    .PMovies {
+        transform: translate(0,0) !important;
+        width: 100%;
+        display: block !important;
+    }
+
+    .BMovies {
+        width: 100%;
+        display: block !important;
+        transform: translate(37px, 0) !important;
+    }
+
+        .BMovies button {
+            width: 91% !important;
+            margin: 16px 0 !important;
+            transform: translate(-36px, 0) !important;
+        }
+
+    .slider-content .badge {
+        font-size: 23px;
+    }
+
+    .slider-content > h1 {
+        font-size: 28px;
+    }
+
+    .slider-content > p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .slider-action {
+        display: flex;
+        justify-content: center;
+    }
+
+        .slider-action .slider-btn-1 {
+            font-size: 18px;
+            padding: 7px 77px;
+        }
+
+    .SpanMovies {
+        display: none;
+    }
+
+        .SpanMovies span {
+            font-size: 11px;
+        }
+
+            .SpanMovies span i {
+                font-size: 14px !important;
+            }
+
+    .images,
+    .images .featured,
+    .images .movies,
+    .images .shows {
+        display: flex !important;
+        width: 105% !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .image {
+        width: 100% !important;
+    }
+
+        .featured > img,
+        .image > .img-div {
+            width: 220px !important;
+            height: 280px !important;
+            padding: 0 10px 0 0 !important;
+        }
+
+    #image {
+        width: 180px !important;
+        height: 291px !important;
+    }
+
+    #moviesCarusel {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-div > h4 {
+        font-size: 15px !important;
+        transform: translate(6px, -11px);
+    }
+
+    .img-div > p {
+        font-size: 10px !important;
+        transform: translate(6px, -17px);
+    }
+
+    .BestSeries_li {
+        font-size: 16px;
+    }
+
+    .featured-movies-shows {
+        font-size: 19px;
+        margin-left: -12px;
+    }
+
+    .wrapper, .Suggested, .TrendingNow, .BestSeries {
+        width: 100%;
+        margin-top: 3rem;
+        height: auto;
+    }
+
+
+
+
+
+    .modal-content {
+        transform: translate(-34px, 92px);
+        width: 334px;
+        height: 542px;
+    }
+
+    .labelModal {
+        margin: 0rem 0 0 -10rem;
+    }
+
+    .form-group {
+        font-size: 13px;
+        margin: 7px 0;
+    }
+
+    .modal-content p {
+        margin-left: 29px;
+        margin-top: 1rem;
+        font-size: 14px;
+    }
+
+    .social-icons {
+        justify-content: space-around;
+    }
+
+        .social-icons a:hover {
+            background-color: #202020;
+        }
+
+    .modal-overlay-sigup {
+        transform: translate(-34px, 49px);
+    }
+
+    .modal-content-sigup {
+        margin: 0 0;
+        padding: 8px;
+        width: 337px;
+        height: 573px;
+    }
+
+    .modal-title-sigup {
+        margin: 0 0;
+    }
+
+    .labelModal-signup {
+        margin-left: -12rem;
+        font-size: 13px;
+    }
+
+    .changePassword-signup {
+        color: white;
+        margin: 5px 5px 5px -9rem;
+        font-size: 11px;
+    }
+
+    .remember-me {
+        font-size: 16px;
+    }
+
+    .formModal {
+        font-size: 9px;
+    }
+    /* Play Movies ve Home Page hisse sonu */
+
+}
+
+@media (max-width: 320px) {
+    main {
+        margin-top: 5%;
+    }
+
+    .Accaunt {
+        display: block;
+        cursor: pointer;
+        transform: translate(11px, 0px);
+    }
+
+        .Accaunt .line {
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 6px 0;
+        }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 60.1px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #272829;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .dropdown {
+        transform: translate(-53px, 0);
+    }
+
+
+    .dropdown-menu {
+        top: 45px;
+        background-color: rgb(197, 95, 95);
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+
+    .nav-bar.active {
+        height: 270px;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 206px;
+        transform: translate(-18px, 0);
+    }
+
+    .logoicons img {
+        display: none;
+    }
+
+    .nav-bar ul li a {
+        transform: translate(0, -64px);
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .DisplayType {
+        display: none;
+    }
+
+    .logoIcon {
+        width: 30%;
+    }
+
+        .logoIcon img {
+            width: 146px;
+            transform: translate(89px, 5px);
+            height: 40px;
+        }
+
+    .Icon {
+        width: 70%;
+    }
+
+        .Icon li {
+            font-size: 21px;
+            margin-top: 13px;
+            margin-right: 1rem;
+        }
+
+    /* Header ve Footer hisse sonu */
+
+    .form-contact .header h1 {
+        font-size: 40px;
+    }
+
+    .form-contact {
+        width: 100%;
+        margin: 184px 55px;
+    }
+
+    /* Contact hisse sonu */
+
+    .Filtir {
+        transform: translate(-104px, -7px);
+    }
+
+    .input-group > .form-control, .input-group > .form-floating, .input-group > .form-select {
+        padding: 2px;
+        font-size: 15px;
+    }
+
+    .card-container {
+        justify-content: center !important;
+        margin-bottom: 0;
+    }
+
+    .moviePageDropdown {
+        transform: translate(96px, 0) !important;
+    }
+
+    .pagination {
+        margin-top: 0 !important;
+        transform: translate(0, 56px);
+    }
+
+        .pagination > li > a {
+            font-size: 22px;
+            padding: 3px;
+        }
+
+    /*  Movies hisse sonu */
+
+    video {
+        height: 465px !important;
+    }
+
+    .MoviesFoto {
+        margin-top: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+        .MoviesFoto img {
+            width: 320px !important;
+            height: 490px !important;
+            transform: translate(24px, 10px);
+        }
+
+    .text {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 0 0;
+        transform: translate(-45px, 0) !important;
+    }
+
+    .PMovies div h1 {
+        transform: translate(-18px,10px) !important;
+        font-size: 29px;
+    }
+
+    .SpanMovies {
+        margin: 11px 0 !important;
+        width: 400px;
+    }
+
+        .SpanMovies span {
+            margin-right: 0 !important;
+            padding: 4px !important;
+        }
+
+            .SpanMovies span i {
+                margin-right: 3px !important;
+                font-size: 19px !important;
+            }
+
+    .MoviesP p {
+        width: 350px !important;
+    }
+
+    .MoviesP h4 {
+        margin: 21px 0 !important;
+    }
+
+    .PMovies {
+        transform: translate(0,0) !important;
+        width: 100%;
+        display: block !important;
+    }
+
+    .BMovies {
+        width: 100%;
+        display: block !important;
+        transform: translate(37px, 0) !important;
+    }
+
+        .BMovies button {
+            width: 91% !important;
+            margin: 16px 0 !important;
+            transform: translate(-36px, 0) !important;
+        }
+
+    .RelatedMovies {
+        margin-top: 7rem;
+        width: 106%;
+        transform: translate(-45px, 0);
+    }
+
+    .images,
+    .images .featured,
+    .images .movies,
+    .images .shows {
+        display: flex !important;
+        width: 105% !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .image {
+        width: 100% !important;
+    }
+
+        .featured > img,
+        .image > .img-div {
+            width: 220px !important;
+            height: 280px !important;
+            padding: 0 10px 0 0 !important;
+        }
+
+    #image {
+        width: 166px !important;
+        height: 279px !important;
+    }
+
+    .img-div > h4 {
+        font-size: 15px !important;
+        transform: translate(0px, -11px);
+    }
+
+    .img-div > p {
+        font-size: 12px !important;
+        transform: translate(0px, -17px);
+    }
+
+    .modal-content {
+        transform: translate(-34px, 92px);
+        width: 334px;
+        height: 542px;
+    }
+
+    .labelModal {
+        margin: 0rem 0 0 -10rem;
+    }
+
+    .form-group {
+        font-size: 13px;
+        margin: 7px 0;
+    }
+
+    .modal-content p {
+        margin-left: 29px;
+        margin-top: 1rem;
+        font-size: 14px;
+    }
+
+    .social-icons {
+        justify-content: space-around;
+    }
+
+        .social-icons a:hover {
+            background-color: #202020;
+        }
+
+    .modal-overlay-sigup {
+        transform: translate(-34px, 49px);
+    }
+
+    .modal-content-sigup {
+        margin: 0 0;
+        padding: 8px;
+        width: 337px;
+        height: 573px;
+    }
+
+    .modal-title-sigup {
+        margin: 0 0;
+    }
+
+    .labelModal-signup {
+        margin-left: -12rem;
+        font-size: 13px;
+    }
+
+    .changePassword-signup {
+        color: white;
+        margin: 5px 5px 5px -9rem;
+        font-size: 11px;
+    }
+
+    .remember-me {
+        font-size: 16px;
+    }
+
+    .formModal {
+        font-size: 9px;
+    }
+    /* Play Movies hisse sonu */
+}
+/* Tablet üçün */
+@media (max-width: 768px) and (min-width: 426px) {
+
+    main {
+        margin-top: 5%;
+    }
+
+    .Accaunt {
+        display: block;
+        cursor: pointer;
+        transform: translate(33px, 0);
+    }
+
+        .Accaunt .line {
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 6px 0;
+        }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 60.1px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #272829;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .dropdown {
+        transform: translate(-53px, 0);
+    }
+
+
+    .dropdown-menu {
+        top: 45px;
+        background-color: rgb(197, 95, 95);
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+
+    .nav-bar.active {
+        height: 270px;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 220px;
+        transform: translate(-8px, 0);
+    }
+
+    .logoicons img {
+        display: none;
+    }
+
+    .nav-bar ul li a {
+        transform: translate(0, -64px);
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .DisplayType {
+        display: none;
+    }
+
+    .logoIcon {
+        width: 30%;
+    }
+
+        .logoIcon img {
+            width: 161px;
+            transform: translate(102px, 8px);
+            height: 40px;
+        }
+
+    .Icon {
+        width: 70%;
+    }
+
+        .Icon li {
+            font-size: 27px;
+            margin-top: 13px;
+            margin-right: 1rem;
+        }
+
+
+    /* Header ve Footer hisse sonu */
+
+    .moviePageDropdown {
+        transform: translate(0, 0);
+    }
+
+    .form-contact .header h1 {
+        font-size: 40px !important;
+        transform: translate(10px, 12px) !important;
+    }
+
+    .form-contact {
+        width: 91%;
+        margin: 73px 20px;
+        height: auto;
+    }
+
+    /* Contact hisse sonu */
+
+    .Filtir {
+        margin-left: 13px;
+    }
+
+    .card-container {
+        justify-content: center !important;
+        margin-bottom: 0 !important;
+    }
+
+    .pagination {
+        margin-top: 40px;
+        margin-bottom: 0;
+        transform: translate(0, 51px);
+    }
+
+        .pagination > li > a {
+            font-size: 21px;
+        }
+
+
+    video {
+        height: 465px !important;
+    }
+
+    .MoviesFoto {
+        margin-top: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+        .MoviesFoto img {
+            width: 320px !important;
+            height: 490px !important;
+            transform: translate(43px, 10px);
+        }
+
+    .text {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 0 0;
+        transform: translate(-22px, 0) !important;
+    }
+
+    .PMovies div h1 {
+        transform: translate(-42px,10px) !important;
+        font-size: 29px;
+    }
+
+    .SpanMovies {
+        margin: 11px 0 !important;
+        width: 400px;
+    }
+
+        .SpanMovies span {
+            margin-right: 0 !important;
+            padding: 4px !important;
+        }
+
+            .SpanMovies span i {
+                margin-right: 3px !important;
+                font-size: 19px !important;
+            }
+
+    .MoviesP p {
+        width: 350px !important;
+    }
+
+    .MoviesP h4 {
+        margin: 21px 0 !important;
+    }
+
+    .PMovies {
+        transform: translate(0,0) !important;
+        width: 100%;
+        display: block !important;
+    }
+
+    .BMovies {
+        width: 100%;
+        display: block !important;
+        transform: translate(37px, 0) !important;
+    }
+
+        .BMovies button {
+            width: 83% !important;
+            margin: 16px 0 !important;
+            transform: translate(-36px, 0) !important;
+        }
+
+    .RelatedMovies {
+        margin-top: 7rem;
+        width: 106%;
+        transform: translate(-45px, 0);
+    }
+
+    .images,
+    .images .featured,
+    .images .movies,
+    .images .shows {
+        display: flex !important;
+        width: 105% !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .slider-content .badge {
+        font-size: 21px;
+    }
+
+    .slider-content > h1 {
+        font-size: 28px;
+    }
+
+    .slider-content > p {
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    .slider-action .slider-btn-1 {
+        font-size: 18px;
+        padding: 8px 46px;
+    }
+
+    .SpanMovies {
+        width: 98%;
+    }
+
+        .SpanMovies span {
+            font-size: 11px;
+        }
+
+    .image {
+        width: 100% !important;
+    }
+
+        .featured > img,
+        .image > .img-div {
+            width: 220px !important;
+            height: 280px !important;
+            padding: 0 10px 0 0 !important;
+        }
+
+    #image {
+        width: 180px !important;
+        height: 291px !important;
+    }
+
+    #moviesCarusel {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-div > h4 {
+        font-size: 17px !important;
+        transform: translate(6px, -11px);
+    }
+
+    .img-div > p {
+        font-size: 12px !important;
+        transform: translate(6px, -17px);
+    }
+
+    .BestSeries_li {
+        font-size: 19px;
+    }
+
+    .featured-movies-shows {
+        font-size: 25px;
+        margin-left: -12px;
+    }
+
+    .wrapper, .Suggested, .TrendingNow, .BestSeries {
+        width: 100%;
+        margin-top: 3rem;
+        height: auto;
+    }
+
+
+
+    .modal-content {
+        transform: translate(-7px, 125px);
+        width: 348px;
+        height: 542px;
+    }
+
+    .labelModal {
+        margin: 0rem 0 0 -10rem;
+    }
+
+    .form-group {
+        font-size: 13px;
+        margin: 7px 0;
+    }
+
+    .modal-content p {
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    .social-icons {
+        justify-content: space-around;
+    }
+
+        .social-icons a:hover {
+            background-color: #202020;
+        }
+
+    .modal-overlay-sigup {
+        transform: translate(-29px, 49px);
+    }
+
+    .modal-content-sigup {
+        margin: 0 0;
+        padding: 8px;
+        width: 383px;
+        height: 662px;
+    }
+
+    .remember-me {
+        font-size: 16px;
+    }
+
+    /* Play Movies ve Home Page hisse sonu */
+}
+
+/* Orta ölçülü ekranlar üçün (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+
+    .logoicons img {
+        width: 120px;
+        height: 30px;
+    }
+
+    .search-box {
+        width: 206px;
+        height: 44px;
+        margin-left: 68px;
+    }
+
+    header {
+        padding: 0 10px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 14px;
+        padding: 9px 5px;
+        margin-top: 10px;
+    }
+
+    .dropdown {
+        transform: translate(29px,0);
+    }
+
+    footer {
+        transform: translate(0, 64px);
+    }
+
+    .logoIcon {
+        margin-right: 33px;
+    }
+
+        .logoIcon img {
+            margin-right: 0;
+        }
+
+    .Icon {
+        width: 100%;
+    }
+
+
+    /* Header ve Footer hisse sonu */
+
+
+
+    .form-contact .header h1 {
+        font-size: 40px!important;
+        transform: translate(10px, -26px)!important;
+    }
+
+
+    /* Contact hisse sonu */
+
+    .card-container {
+        margin-bottom: 0;
+    }
+
+    .Filtir {
+        transform: translate(-30px, 0);
+    }
+
+    .pagination {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /*  Movies ve Home Page hisse sonu */
+
+    video {
+        height: 465px !important;
+    }
+
+    .MoviesFoto img {
+        width: 320px !important;
+        height: 690px !important;
+    }
+
+    .PMovies div h1 {
+        transform: translate(-9px,10px)!important;
+        font-size: 29px;
+    }
+
+    .text {
+        width: 300px;
+        margin: 0 0 0 0;
+    }
+
+    .SpanMovies {
+        margin: 11px 0 !important;
+        width: 400px;
+    }
+
+        .SpanMovies span {
+            margin-right: 0 !important;
+            padding: 4px !important;
+        }
+
+            .SpanMovies span i {
+                margin-right: 3px !important;
+                font-size: 19px !important;
+            }
+
+    .MoviesP p {
+        width: 350px !important;
+    }
+
+    .MoviesP h4 {
+        margin: 21px 0 !important;
+    }
+
+    .PMovies {
+        transform: translate(0,0) !important;
+        width: 100%;
+    }
+
+    .BMovies {
+        width: 100%;
+        display: block !important;
+        transform: translate(37px, 0) !important;
+    }
+
+        .BMovies button {
+            width: 91% !important;
+            margin: 16px 0 !important;
+        }
+
+    .images,
+    .images .featured,
+    .images .movies,
+    .images .shows {
+        display: flex !important;
+        width: 105% !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .slider-item {
+        background-size: cover!important;
+        background-size: 100% 100vh !important;
+        background-repeat: no-repeat !important;
+    }
+
+
+
+    .slider-content .badge {
+        font-size: 26px;
+    }
+
+    .slider-content > h1{
+        font-size:31px;
+    }
+    .slider-content > p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .slider-action .slider-btn-1 {
+        font-size: 18px;
+        padding: 13px 54px;
+    }
+
+    .SpanMovies {
+        width: 98%;
+    }
+
+    .image {
+        width: 100% !important;
+    }
+
+        .featured > img,
+        .image > .img-div {
+            width: 220px !important;
+            height: 280px !important;
+            padding: 0 10px 0 0 !important;
+        }
+
+    #image {
+        width: 208px !important;
+        height: 291px !important;
+    }
+
+    #moviesCarusel {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-div > h4 {
+        font-size: 22px !important;
+        transform: translate(6px, -11px);
+    }
+
+    .img-div > p {
+        font-size: 15px !important;
+        transform: translate(6px, -17px);
+    }
+
+    /* modal Share */
+    .modalPlayMovies {
+        top: 150px;
+    }
+
+    .modal-title-playmovies {
+        color: #202020;
+    }
+
+    .btn-play-close {
+        color: white !important;
+        font-weight: bolder !important;
+    }
+
+        .btn-play-close:hover {
+            color: white !important;
+        }
+
+    .modal-body-icon a i {
+        font-size: 40px !important;
+        color: white;
+    }
+
+
+    /* Modal Trailer */
+    .modal-dialog {
+    }
+
+    .modal-content-playMovies {
+        border-radius: 5px;
+        top: 100px !important;
+        width: 600px;
+        background: #202020;
+    }
+
+    .modal-body-playmovies {
+        margin-top: -40px;
+    }
+
+        .modal-body-playmovies > video {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+
+    .modal-overlay-sigup {
+        transform: translate(59px, 104px) !important;
+    }
+
+
+    /* Play Movies hisse sonu */
+}
+
+/* Böyük Ekranlar üçün */
+@media (min-width: 1442px) and (max-width: 2560px) {
+/*    .logoicons img {
+        width: 135px;
+        height: 46px;
+    }
+
+    .search-box {
+        width: 43%;
+        height: 44px;
+    }
+
+
+    .DisplayType {
+        width: 33%;
+        transform: translate(-158px, -5px);
+    }
+
+        .DisplayType h4 {
+            font-size: 24px;
+        }
+
+        .DisplayType ul li a {
+            font-size: 19px;
+        }
+
+    .Icon {
+        display: flex;
+        justify-content: center;
+        width: 33%;
+    }
+
+        .Icon li {
+            font-size: 44px;
+            margin-right: 8rem;
+        }
+
+    .logoIcon {
+        margin-right: 126px;
+    }
+
+        .logoIcon img {
+            width: 259px;
+            height: 60px;
+        }*/
+
+    /* Header ve Footer hisse sonu */
+
+
+/*    .form-contact {
+        width: 51%;
+    }
+
+        .form-contact .header h1 {
+            font-size: 72px;
+        }
+
+    .form-control-contact {
+        padding: 34px;
+    }
+
+    .form-contact > div > label {
+        font-size: 30px;
+    }*/
+
+    /* Contact hisse sonu */
+
+
+
+    /*  Movies hisse sonu */
+
+/*    video {
+        margin-top: 6rem !important;
+        height: auto !important;
+    }
+
+    .PMovies {
+        transform: translate(-37px,0);
+    }
+
+
+    .BMovies {
+        width: 100%;
+    }
+
+        .BMovies button {
+            transform: scale(1.3) !important;
+            margin: 0 25px 0 30px !important
+        }
+
+    .featured > img,
+    .image > .img-div {
+        width: 220px;
+        height: 280px;
+        margin: 0 16px 0 0;
+    }*/
+
+    /* Play Movies hisse sonu */
+
+}

@@ -1,0 +1,175 @@
+﻿@model HomeViewModel
+@inject UserManager<AppUser> UserManager
+
+@{
+    ViewData["Title"] = "ProfileSettings";
+}
+@section addcss{
+
+    <link rel="stylesheet" href="~/css/AccauntSettings.css" asp-append-version="true">
+}
+
+
+
+<div class="container-fluid">
+    <div class="main-content">
+        <!-- Start Account Settings Section -->
+        <section class="account-settings">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="content-settings">
+                            <ul class="nav nav-pills mb-3">
+                                <li class="nav-item profile-settings">
+                                    <a class="nav-link profile-settings" href="#">Profile Settings</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane animated  show active">
+                                    <!-- Start Form -->
+                                    <form id="profile-settings-form" method="post" enctype="multipart/form-data" asp-action="ProfileSettings">
+                                        <input type="hidden" asp-for="ProfileViewModel.Id" />
+                                        <div class="error-container"></div>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <div class="settings-avatar">
+                                                        <input asp-for="ProfileViewModel.Img" style="background-color:red;" class="input-situation custom-file-input" type="file" name="imageFile" id="createdImage file" />
+                                                        @if (User.Identity.IsAuthenticated)
+                                                        {
+                                                            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                                                            var user = await UserManager.FindByIdAsync(userId);
+                                                            if (!string.IsNullOrEmpty(user.Img))
+                                                            {
+                                                                <img src="~/@Model.ProfileViewModel.Img" alt="#" id="createdImage" class=" img-fluid mt-4" width="200" height="200" />
+                                                            }
+                                                            else
+                                                            {
+                                                                <img src="~/Img/user.jpg" id="createdImage" width="200" height="200"
+                                                             class="img-fluid mt-4" alt="#">
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Img/user.jpg" id="createdImage" width="200" height="200"
+                                                             class="img-fluid mt-4" alt="#">
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Row End -->
+                                        <h5 class="mb-3 mt-3 pb-3 section-border">General Information</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group AccauntSettings">
+                                                    <label asp-for="ProfileViewModel.UserName">Username</label>
+                                                    <input asp-for="ProfileViewModel.UserName" class="form-control my-3" type="text"
+                                                           placeholder="Enter your Username" id="username">
+                                                </div>
+                                            </div>
+                                            <!-- Col End -->
+                                            <div class="col-md-6">
+                                                <div class="form-group AccauntSettings">
+                                                    <label asp-for="ProfileViewModel.Email">Email Address</label>
+                                                    <input asp-for="ProfileViewModel.Email" type="email" class="form-control my-3"
+                                                           placeholder="Enter your email" id="emailAddress">
+                                                </div>
+                                            </div>
+                                            <!-- Col End -->
+                                        </div>
+                                        <!-- Row End -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group AccauntSettings">
+                                                    <label asp-for="ProfileViewModel.Name"> Name</label>
+                                                    <input asp-for="ProfileViewModel.Name" class="form-control my-3" type="text"
+                                                           placeholder="Enter your Name" id="emailAddress">
+                                                </div>
+                                            </div>
+
+                                            <!-- Col End -->
+                                            <div class="col-md-6">
+                                                <div class="form-group AccauntSettings">
+                                                    <label asp-for="ProfileViewModel.Surname">Surname</label>
+                                                    <input asp-for="ProfileViewModel.Surname" class="form-control my-3" type="text"
+                                                           placeholder="Enter your Surname" id="lastName">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Row End -->
+                                        <h5 class="mb-3 mt-3 pb-3 section-border">Change Password</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group AccauntSettings">
+                                                    <label asp-for="ProfileViewModel.Password">Current Password</label>
+                                                    <input asp-for="ProfileViewModel.Password" type="password" class="form-control my-3"
+                                                           placeholder="Enter your Current Password"
+                                                           id="currentPassword">
+                                                </div>
+                                            </div>
+
+                                            <!-- Col End -->
+                                            <div class="col-md-6">
+                                                <div class="form-group AccauntSettings">
+                                                    <label asp-for="ProfileViewModel.NewPassword">New Password</label>
+                                                    <input asp-for="ProfileViewModel.NewPassword" type="password" class="form-control my-3"
+                                                           placeholder="Enter your New Password" id="newPassword">
+                                                </div>
+                                            </div>
+
+                                            <!-- Col End -->
+                                        </div>
+                                        <!-- Row End -->
+                                        <h5 class="mb-3 mt-3 pb-3 section-border">Personal Information</h5>
+                                        <div id="sandbox-container" class="form-group AccauntSettings">
+                                            <label asp-for="ProfileViewModel.DateOfBirth">Date of Birth</label>
+                                            <input type="date" asp-for="ProfileViewModel.DateOfBirth" class="form-control my-3"
+                                                   placeholder="Enter your Date of Birth" id="dateofbirth">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group AccauntSettings">
+                                                    <label asp-for="ProfileViewModel.Gender">
+                                                        Gender
+                                                    </label>
+
+                                                    <select asp-for="ProfileViewModel.Gender" class="form-control my-3"
+                                                            aria-label="Default select example" id="select-gender">
+                                                        <option value="1" selected="selected">Male</option>
+                                                        <option value="2">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Col End -->
+                                            <div class="col-md-6">
+                                                <div class="form-group AccauntSettings">
+                                                    <label asp-for="ProfileViewModel.Country">Country</label>
+                                                    <input asp-for="ProfileViewModel.Country" class="form-control my-3"
+                                                           aria-label="Default select example" id="select-language">
+                                                </div>
+                                            </div>
+                                            <!-- Col End -->
+                                        </div>
+
+                                        <!-- Row End -->
+                                        <div class="form-group  mt-3" id="buttonSaveCancel">
+                                            <button type="submit" value="Create" class="hvr-sweep-to-right btn px-3">Save</button>
+                                            <a href="#" class="hvr-sweep-to-right btn ms-3">Cancel</a>
+                                        </div>
+                                    </form>
+                                    <!-- Form End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+

@@ -1,0 +1,55 @@
+﻿@model GenresCategoryDto
+@{
+    ViewData["Title"] = "Update";
+}
+@section addcss{
+    <style>
+        .formC label {
+            color: white;
+        }
+
+        .formC input {
+            color: black;
+            background-color: white;
+        }
+
+        .creH1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .create-account-sign {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+        }
+    </style>
+
+}
+
+<div class="row" style="display:flex; align-items:center; justify-content:center;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:95px;">
+        <div class="create-account-sign">
+            <a asp-action="Index"><i class="fa fa-sign-in big-icon"></i></a>
+        </div>
+        <h1 class="display-3 creH1">Update Genres</h1>
+        <form class="formC" method="post" asp-action="Update">
+            <div class="form-group-inner">
+                <div class="row" style="display:flex; align-items:center; justify-content:center;">
+                    <div class="form-group col-lg-4">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <label asp-for="Name" for="Name" class="control-label ">Name</label>
+                        <input type="text" asp-for="Name" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-4 text-center">
+                <button type="submit" value="Create" class="btn btn-custon-four btn-default btn-lg">
+                    Create
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

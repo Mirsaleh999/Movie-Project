@@ -1,0 +1,149 @@
+
+#about {
+    display: flex;
+    width: 100%;
+    background: #202020;
+    height: 100vh;
+}
+
+    #about img {
+        width: 450px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+.about-content {
+    display: flex;
+    max-width: 95%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text {
+    margin-left: 60px;
+}
+
+    .about-text h1 {
+        font-size: 70px;
+        color: white;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+    }
+
+.about-text h5 {
+    font-size: 25px;
+    color: white;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.about-text span {
+    color: red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.about-text p {
+    color: antiquewhite;
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+
+.button_detailed {
+    width: 120px;
+    height: 40px;
+    font-size: 18px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+    .button_detailed:hover {
+        background: transparent;
+        border: 2px solid red;
+    }
+
+
+/* ... Your existing CSS code ... */
+
+/* Medium devices (tablets) */
+@media (max-width: 768px) {
+    #about img {
+        width: 350px;
+    }
+
+    .about-text h1 {
+        font-size: 50px;
+    }
+
+    .about-text h5 {
+        font-size: 20px;
+    }
+}
+
+/* Small devices (landscape phones) */
+@media (max-width: 576px) {
+    #about img {
+        width: 300px;
+    }
+
+    .about-text {
+        margin-left: 30px;
+    }
+
+        .about-text h1 {
+            font-size: 40px;
+        }
+
+        .about-text h5 {
+            font-size: 18px;
+        }
+
+        .about-text p {
+            font-size: 15px;
+        }
+
+    .button_detailed {
+        width: 100px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 480px) {
+    #about img {
+        width: 250px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+        .about-text h1 {
+            font-size: 35px;
+        }
+
+        .about-text h5 {
+            font-size: 16px;
+        }
+
+        .about-text p {
+            font-size: 14px;
+        }
+
+    .button_detailed {
+        width: 90px;
+        height: 30px;
+        font-size: 14px;
+    }
+}

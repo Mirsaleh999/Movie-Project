@@ -1,0 +1,119 @@
+﻿@model HomeViewModel
+@Html.AntiForgeryToken()
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section addcss{
+
+    <link href="~/css/movies.css" rel="stylesheet" asp-append-version="true" />
+
+}
+
+<div class="container">
+    <div class="Filtir">
+        <form asp-action="index" method="get" class="dropdown moviePageDropdown">
+            <div class="input-group mg-b-pro-edt">
+                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                <select class="form-control pro-edt-select" asp-for="FilterFormModel.GenresCategoryId">
+                    <option value="Genres" selected disabled>Genres</option>
+                    @foreach (var item in Model.GenresCategories)
+                    {
+                        
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="input-group mg-b-pro-edt">
+                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                <select class="form-control pro-edt-select" asp-for="FilterFormModel.CountryCategoryId">
+                    <option value="Country" selected disabled>Country</option>
+                    @foreach (var item in Model.CountryCategories)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="input-group mg-b-pro-edt">
+                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                <select class="form-control pro-edt-select" asp-for="FilterFormModel.LanguageCategoryId">
+                    <option value="Language" selected disabled>Language</option>
+                    @foreach (var item in Model.LanguageCategories)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <input class="submit" type="submit" value="Search" />
+               
+        </form>
+    </div>
+
+    <div class="card-container">
+        @foreach (var item in Model.PagedViewModel.Items)
+        {
+            <div class="card mt-3 mb-5" style="margin:1.6%;">
+                <div class="poster">
+                    <img src="~/@item.Img" alt="#">
+                </div>
+                <div class="details" sty>
+                    <a asp-area="" asp-controller="PlayMovies" asp-action="Index" asp-route-id="@item.Id"><i class="bi bi-play-circle"></i></a>
+                    <h2>@item.Name</h2>
+                  <div id="rateYo_@item.Id"  data-rating="@((item.RatingCount > 0) ? (item.RatingSum / item.RatingCount) : 0)" style="width: 110px; margin-bottom:15px;" data-rateyo-full-star="true"></div>
+
+                    <div id="averageRating_@item.Id" style="color:white;">
+                        @((item.RatingCount > 0) ? (item.RatingSum / item.RatingCount).ToString("0.0") : "0")
+                    </div>
+                    <div class="tags">
+                        <span>@item.Year</span>
+                        <span>@item.GenresCategory.Name</span>
+                        @if (item.LanguageCategoryId==7)
+                        {
+                             <span style="font-size:14px; margin-left:4px;">@item.LanguageCategory.Name</span>
+                        }
+                    </div>
+                    <div class="info">
+                        Director: @item.Director
+                    </div>
+                </div>
+            </div>
+        }
+        @Model.PagedViewModel.GetPagenation(Url, "Index");
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+
+        $(function () {
+            $('div[id^="rateYo_"]').each(function () {
+                var movieId = this.id.replace('rateYo_', '');
+                var initialRating = $(this).data("rating");
+                $(this).rateYo({
+                    spacing: "5px",
+                    rating: initialRating,
+                    starWidth: "20px",
+                    fullStar: true,
+                    onSet: function (rating, rateYoInstance) {
+                        var token = $('input[name="__RequestVerificationToken"]').val();
+                        $.ajax({
+                            url: '/Movies/RateMovie',
+                            method: 'POST',
+                            data: {
+                                __RequestVerificationToken: token,
+                                movieId: movieId,
+                                rating: rating
+                            },
+                            success: function (data) {
+                                $('#averageRating_' + movieId).text(data.newAverageRating);
+                            }
+                        });
+                    }
+
+                });
+            });
+        });
+
+    </script>
+}

@@ -1,0 +1,90 @@
+
+body {
+    background: rgb(29, 28, 28);
+    color: white;
+}
+
+#account-settings {
+    color: white;
+}
+
+#account-settings:hover {
+    color: red;
+    
+}
+
+.profile-settings {
+    background-color: red;
+    color: white;
+}
+
+.profile-settings:hover {
+    background-color: red;
+    color: white;
+}
+
+.change-avatar {
+    transform: translate(1rem, -12rem);
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+
+#username,
+#dateofbirth,
+#newPassword,
+#currentPassword,
+#lastName,
+#firstName,
+#emailAddress,
+#select-gender,
+#select-language,
+placeholder
+{
+    border-color: white;
+    background-color: #1D1C1C;
+    padding: 8px;
+    border-radius: 0;
+    color: grey;
+}
+input:focus{
+    background-color: white !important;
+    color: black !important;
+    box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.36) !important;
+    border-color: red !important;
+}
+select:focus{
+    background-color: white !important;
+    color: black !important;
+    box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.36) !important;
+    border-color: red !important; 
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.btn{
+    background-color: red;
+    color: white;
+    border-radius: 0;
+    transform: scale(1.1);
+}
+
+.btn:hover{
+    color: white;
+}
+
+.form-group {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+}
+
+#buttonSaveCancel {
+    display: inline-block !important;
+}
+
+.main-content {
+    margin-top: 100px;
+    margin-bottom: 150px;
+}

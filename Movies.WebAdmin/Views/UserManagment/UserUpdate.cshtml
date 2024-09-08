@@ -1,0 +1,117 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "UserUpdate";
+}
+<style>
+    #title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .create-account-sign {
+        display: flex;
+        align-items: end;
+        justify-content: end;
+    }
+
+    .label-situation {
+        font-size: 5rem;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        position: relative !important;
+    }
+
+    .input-situation {
+        opacity: 0 !important;
+        background-color: transparent;
+        position: absolute !important;
+        height: 500px !important
+    }
+
+    #plus {
+        position: absolute;
+        margin-top: -130px;
+    }
+
+    .formC label {
+        color: white;
+    }
+
+    .formC input {
+        color: black;
+        background-color: white;
+    }
+
+    .formC select {
+        color: black;
+        background-color: white;
+    }
+</style>
+}
+
+
+<div class="container p-5">
+    <h2 class="text-light">Create Image</h2>
+
+    <form method="post" enctype="multipart/form-data" asp-action="UserUpdate">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="row">
+            <div style=" margin-left:190px">
+                <div class="create-account-sign">
+                    <a asp-action="UserIndex"><i class="fa fa-sign-in big-icon"></i></a>
+                </div>
+                <h1 id="title">Update User</h1>
+                <div class="col-md-6 form-group label-situation" style="display: flex; justify-content: center; align-items: center;">
+                    <label asp-for="Img" id="plus" class="form-control"  style="font-size:8rem; background-color:transparent; border:none; text-align:center;">
+                        +
+                    </label>
+                    <input asp-for="Img" class="input-situation custom-file-input" name="imageFile" type="file" id="createdImage file" width="500" height="500" style="opacity:0;" />
+                    <img src="~/@Model.Img"  id="createdImage" width="500" height="500" style="display:block;" />
+                </div>
+
+                <div class="col-md-6">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group formC">
+                        <label asp-for="Name" class="form-control" for="name">Name</label>
+                        <input id="name" required asp-for="Name" class="form-control" />
+                    </div>
+                    <div class="form-group formC">
+                        <label for="Surname" class="form-control" asp-for="Surname">Surname</label>
+                        <input id="name" required asp-for="Surname" class="form-control" />
+                    </div>
+                    <div class="form-group formC">
+                        <label asp-for="Gender" class="control-label"> Category</label>
+                        <select asp-for="Gender" class="form-control">
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group formC">
+                        <label for="UserName" class="form-control" asp-for="UserName">UserName</label>
+                        <input id="name" required asp-for="UserName" class="form-control" />
+                    </div>
+                    <div class="form-group formC">
+                        <label for="Email" class="form-control" asp-for="Email">Email</label>
+                        <input id="name" required asp-for="Email" class="form-control" />
+                    </div>
+                    <div class="form-group formC">
+                        <label for="Country" class="form-control" asp-for="Country">Country</label>
+                        <input id="name" required asp-for="Country" class="form-control" />
+                    </div>
+                    <div class="form-group formC">
+                        <label for="Password" class="form-control" asp-for="Password">Password</label>
+                        <input id="name" required asp-for="Password" class="form-control" type="password" />
+                    </div>
+                    <button type="submit" value="Create" class="btn btn-custon-four btn-default btn-lg" style="margin-left:-150px; margin-top:40px;">
+                        Create
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

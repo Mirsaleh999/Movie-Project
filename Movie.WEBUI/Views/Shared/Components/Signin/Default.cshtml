@@ -1,0 +1,31 @@
+﻿@model HomeViewModel
+
+
+<div class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 class="modal-title">Sign In</h2>
+        <form class="formModal" asp-controller="account" asp-action="SignIn" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <label asp-for="SignInViewModel.UserName" for="username" class="labelModal">Username</label>
+            <input asp-for="SignInViewModel.UserName" type="text" id="username" required data-val-required="Username cannot be empty.">
+
+            <label asp-for="SignInViewModel.Password" for="password" class="labelModal">Password</label>
+            <input asp-for="SignInViewModel.Password" type="password" id="password" required data-val-required="Password cannot be empty.">
+            <span asp-validation-for="SignInViewModel.Password" class="text-danger"></span>
+
+            <div class="form-group">
+                <input asp-for="SignInViewModel.RememberMe" type="checkbox" id="remember-me" name="remember-me">
+                <label asp-for="SignInViewModel.RememberMe" for="remember-me" class="remember-me mx-2">Remember me</label>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn-signin">Sign In</button>
+        </form>
+        <p>Don't have an account? <a href="#" class="sign-up">Sign Up</a></p>
+        <div class="social-icons" style="margin-top:-7px;">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+</div>
